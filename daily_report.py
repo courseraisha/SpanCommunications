@@ -11,7 +11,7 @@ st.title(":orange[_SPAN COMMUNICATIONS_]")
 selected_option = st.sidebar.selectbox("Select an option", ["December Daily Report", "January Performance Leads"])
 
 if selected_option == "December Daily Report":
-    data = pd.read_excel("C:/Users/Admin/Desktop/SPAN COMMUNICATIONS/EXCEL FILES/DEC_DAILY_REPORT.xlsx")
+    data = pd.read_excel("DEC_DAILY_REPORT.xlsx")
     
     data['Date'] = pd.to_datetime(data['Date'], dayfirst=True)
     
@@ -82,7 +82,7 @@ if selected_option == "December Daily Report":
    - CPL and Amount Spent (-0.040): Increasing budget doesn't guarantee lower cost per lead. 
 """)
 if selected_option == "January Performance Leads":
-    data = pd.read_excel("C:/Users/Admin/Desktop/SPAN COMMUNICATIONS/EXCEL FILES/JAN_PERFORMANCE_LEADS.xlsx")
+    data = pd.read_excel("JAN_PERFORMANCE_LEADS.xlsx")
     
     data['Date'] = pd.to_datetime(data['Date'], dayfirst=True)
     
