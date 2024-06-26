@@ -1,9 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import plotly.express as px
-import prophet
-from prophet import Prophet  
+import plotly.express as px 
 import matplotlib.pyplot as plt
 
 # Load data from Excel file
@@ -158,11 +156,7 @@ st.write('')
 
 # Display the chart
 st.subheader("Analysis:")
-fig1 = m.plot(forecast)
-plt.title("Negative Sentiment Trend Over Time")
-plt.xlabel('Date')
-plt.ylabel('Values')
-st.pyplot(fig1)
+st.image("path/to/your/image.jpg", caption="Sample Image", use_column_width=True)
 st.write('''The graph illustrates the forecasted trend of negative sentiment over the upcoming 150 days with a 95% confidence interval. 
          The observed data shows a significant decrease in negative sentiment up to around April 2024. 
          Beyond this period, the trend stabilizes and remains relatively constant. The shaded blue area represents the 95% confidence interval, 
