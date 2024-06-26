@@ -94,20 +94,6 @@ with col2:
                         title="Sentiment Volume Distribution (Filtered)")
     st.plotly_chart(fig_volume)
 
-df2 = pd.DataFrame(df.groupby("Date2")["Sentiment"].value_counts())
-df2 = df2.reset_index()
-df2 = df2.pivot(index="Date2", columns="Sentiment", values="count")
-df2 = df2.fillna( 0)
-df2["Score"] = df2["Negative"] - df2["Positive"]
-m = Prophet(interval_width=0.95)  # For a 95% confidence interval
-df3 = df2.reset_index()
-df3['cumScore'] = df3['Score'].cumsum()
-df3 = df3[["Date2", "cumScore"]]
-df3.rename(columns={"Date2": "ds", "cumScore": "y"}, inplace=True)
-m.fit(df3)
-future = m.make_future_dataframe(periods=150)
-forecast = m.predict(future)
-
 st.title("**_Predictive Analysis -_**")
 st.subheader("Example:")
 # Adjusted Dummy Time Series Data
@@ -156,7 +142,7 @@ st.write('')
 
 # Display the chart
 st.subheader("Analysis:")
-st.image("path/to/your/image.jpg", caption="Sample Image", use_column_width=True)
+st.image("download.png", use_column_width=True)
 st.write('''The graph illustrates the forecasted trend of negative sentiment over the upcoming 150 days with a 95% confidence interval. 
          The observed data shows a significant decrease in negative sentiment up to around April 2024. 
          Beyond this period, the trend stabilizes and remains relatively constant. The shaded blue area represents the 95% confidence interval, 
