@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 
 # Load data from Excel file
 try:
-    df = pd.read_excel("NPS Trust_Ticket_Report_20240625104249.xlsx", sheet_name="Ticket")
+    df = pd.read_excel("NPS Trust_Ticket_Report_20240625104249.xlsx")
     df.dropna(subset=["Date"], inplace=True)
     df = df[["Date", "Source Type", "Author", "Followers", "Title", "Sentiment"]]
     df["Date"] = pd.to_datetime(df["Date"])
