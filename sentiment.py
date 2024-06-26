@@ -143,7 +143,7 @@ st.write('')
 # Display the chart
 st.subheader("Analysis:")
 st.image("download.png", use_column_width=True)
-st.write('''The graph illustrates the forecasted trend of negative sentiment over the upcoming 150 days with a 95% confidence interval. 
+st.write('''The graph illustrates the forecasted trend of negative sentiment over the upcoming 150 days after June 24, 2024, with a 95% confidence interval.
          The observed data shows a significant decrease in negative sentiment up to around April 2024. 
          Beyond this period, the trend stabilizes and remains relatively constant. The shaded blue area represents the 95% confidence interval, 
          showing a range of possible outcomes. 
