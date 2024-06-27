@@ -89,7 +89,7 @@ with col2:
     sentiment_counts_filtered = masked_df["Sentiment"].value_counts().reset_index()
     sentiment_counts_filtered.columns = ['Sentiment', 'Counts']
 
-fig_volume = px.bar(
+    fig_volume = px.bar(
     sentiment_counts_filtered, 
     x='Sentiment', 
     y='Counts',
