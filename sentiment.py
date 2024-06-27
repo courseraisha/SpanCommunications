@@ -89,9 +89,14 @@ with col2:
     sentiment_counts_filtered = masked_df["Sentiment"].value_counts().reset_index()
     sentiment_counts_filtered.columns = ['Sentiment', 'Counts']
 
-    fig_volume = px.bar(sentiment_counts_filtered, x='Sentiment', y='Counts',
-                        labels={"x": "Sentiment", "y": "Count"},
-                        title="Sentiment Volume Distribution (Filtered)")
+fig_volume = px.bar(
+    sentiment_counts_filtered, 
+    x='Sentiment', 
+    y='Counts',
+    color_discrete_sequence=['#ff7800'],  # Specify the desired color
+    labels={"x": "Sentiment", "y": "Count"},
+    title="Sentiment Volume Distribution (Filtered)"
+)
     st.plotly_chart(fig_volume)
 
 st.title("**_Predictive Analysis -_**")
